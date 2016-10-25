@@ -17,11 +17,14 @@ public class MergeSorter {
 		arr.add(47);
 		arr.add(99);
 		
-		ArrayList<Integer> newArr = mergeSort(ArrayList<Integer> arr);
+		ArrayList<Integer> newArr = mergeSort(arr);
+		
+		System.out.print("Ordered array: ");
+		System.out.println(newArr);
 	}
 	
 	public static ArrayList<Integer> mergeSort(ArrayList<Integer> a){
-		// if ArrayList assed through is empty or has one element
+		// if ArrayList passed through is empty or has one element
 		if(a.size() <= 1){
 			return a;
 		}
@@ -37,7 +40,21 @@ public class MergeSorter {
 			}
 		}
 		
-	
+		ArrayList<Integer> firstSorted = new ArrayList<Integer>();
+		ArrayList<Integer> secondSorted = new ArrayList<Integer>();
 		
+		firstSorted = mergeSort(firstComparable);
+		secondSorted = mergeSort(secondComparable);
+		
+		// sort
+		for(int i = 0; i < secondSorted.size(); i++){
+			int j = 0;
+			while(secondSorted.get(i) > firstSorted.get(i)){
+				j++;
+			}
+			firstSorted.add(j, secondSorted.get(i));
+		}
+		
+		return firstSorted;		
 	}
 }
