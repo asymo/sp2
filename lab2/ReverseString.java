@@ -1,4 +1,5 @@
 
+
 public class ReverseString {
 	public static void main(String[] args){
 		String word = "abcdefg";
@@ -8,7 +9,8 @@ public class ReverseString {
 	
 	public static String reverse(String word){
 		if(word.length() == 1){
-			return word;
+			throw new RuntimeException(word);
+			//return word;
 		}
 		
 		String a = reverse(word.substring(1));

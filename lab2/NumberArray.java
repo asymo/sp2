@@ -42,7 +42,8 @@ public class NumberArray {
 			// squared value of deviation added to
 			sumDeviations += Math.pow(x, 2);
 		}
-		sumDeviations = sumDeviations / a.size();
+		// sumDeviations = sumDeviations / a.size();
+		sumDeviations = sumDeviations / (a.size() -1);
 		sumDeviations = Math.sqrt(sumDeviations);
 		return sumDeviations;
 	}
