@@ -28,6 +28,7 @@ public class MergeSorter {
 		if (a.size() <= 1) {
 			return a;
 		}
+		
 
 		ArrayList<Integer> firstComparable = new ArrayList<Integer>();
 		ArrayList<Integer> secondComparable = new ArrayList<Integer>();
