@@ -2,6 +2,7 @@ package one;
 
 public class IDCard extends Card {
 	private String idNumber;
+	private FINAL boolean expired = false;
 	
 	/**
 	 * Constructs an IDCard object with the given name and ID
@@ -20,8 +21,17 @@ public class IDCard extends Card {
 	 */
 	@Override
 	public String format(){
-		super.format();
-		return ", ID: " + idNumber;
+		String x = super.format();
+		return x + ", ID: " + idNumber;
 	}
-
+	
+	/**
+	 * Returns a boolean of false as card does not expire
+	 * 
+	 * @return boolean false
+	 */
+	@Override
+	public boolean isExpired(){
+		return expired;
+	}
 }

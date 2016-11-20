@@ -3,6 +3,7 @@ package one;
 public class CallingCard extends Card{
 	private int cardNumber;
 	private int pin;
+	private FINAL boolean expired = false;
 	
 	/**
 	 * Constucts a CallingCard object with given name, card number and pin 
@@ -35,4 +36,13 @@ public class CallingCard extends Card{
 		return ", Card Number: " + cardNumber + ", PIN: " + pin;
 	}
 
+	/**
+	 * Returns a boolean with a value of false as card cannot expire
+	 * 
+	 * @return boolean with value false
+	 */
+	@Override
+	public boolean isExpired(){
+		return expired;
+	}
 }

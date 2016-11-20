@@ -1,4 +1,6 @@
 package one;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class DriverLicence extends IDCard {
 	private int expirationYear;
@@ -21,7 +23,23 @@ public class DriverLicence extends IDCard {
 	 */
 	@Override
 	public String format(){
-		super.format();
-		return ", Expiration Year: " + expirationYear;
+		String x = super.format();
+		return x + ", Expiration Year: " + expirationYear;
+	}
+	
+	/**
+	 * Returns a boolean from comparing the expiration date to the current date
+	 * 
+	 * @return boolean, true if current year is greater than the expiration year
+	 */
+	@Override
+	public boolean isExpired(){
+		GregorianCalendar calendar = new GregorianCalendar();
+		int currentYear = calendar.get(Calendar.YEAR);
+		if(currentYear > expirationYear){
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
