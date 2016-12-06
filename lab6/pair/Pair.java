@@ -27,29 +27,31 @@ package pair;
 	}
 }*/
 
-public class Pair<T>{
+public class Pair<T,D>{
 	private T obj1;
-	private T obj2;
+	private D obj2;
 	
-	public Pair(T obj1, T obj2){
-		this.obj1 = obj1;
-		this.obj2 = obj2;
+	public Pair(T obj12, D obj21){
+		this.obj1 = obj12;
+		this.obj2 = obj21;
 	}
 	
-	/*public Pair(T pair){
-		this.obj1 = pair.getFirst();
-		this.obj2 = pair.getSecond();
-	}*/
+	public Pair(Pair<? extends T, ? extends D> pair){
+		/*this.obj1 = pair.getFirst();
+		this.obj2 = pair.getSecond();*/
+		this.obj1 = pair.obj1;
+		this.obj2 = pair.obj2;
+	}
 	
 	public T getFirst(){
 		return obj1;
 	}
 	
-	public T getSecond(){
+	public D getSecond(){
 		return obj2;
 	}
 	
-	/*public Pair swap(){
-		return new Pair(obj2, obj1);
-	}*/
+	public Pair<D,T> swap(){
+		return new Pair<D,T>(obj2, obj1);
+	}
 }

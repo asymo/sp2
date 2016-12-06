@@ -18,7 +18,7 @@ public class Genetics {
 		Object[] d;
 		d = c;
 		d[0] = "hi there";
-		// yes will compile as the string is being entered into an array of Objects
+		// yes will compile as the string is being entered into an array of Objects, will crash at run time using a type cast exception
 		
 		// c)
 		Integer[] e = new Integer[10];
@@ -57,20 +57,20 @@ public class Genetics {
 		 */
 		ArrayList<Integer> a = new ArrayList<Integer>();
 		ArrayList<?> b;
-		b = a;
+		b = a; //this would compile
 		b.add(42);
 		// will not compile as Integer is not the same  type as ? (could be any class that extends Object)
 		
 		ArrayList<Integer> c = new ArrayList<Integer>();
 		ArrayList<?> d;
 		d = c;
-		d.add("hi there");
+		//d.add("hi there");
 		// will not compile as won't add String to unknown type
 		
 		ArrayList<Integer> e = new ArrayList<Integer>();
 		ArrayList<?> f;
 		f = e;
-		e.add("hi there");
+		//e.add("hi there");
 		// won't compile, incompatible type Integer to String
 	}
 
